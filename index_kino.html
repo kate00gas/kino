@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+ <title>Кинотеатр</title>
+{% endblock %}
+
+{% block body %}
+
+
+
+<!-- <div class="p-3 mb-2 bg-primary">-->
+<!--   <img src="/Applications/Универ/5 семестр/Курсовик/templates/Fon.jpg" style="width:900px;height:600px;">-->
+
+   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Кино</h1>
+      <p class="fs-5 text-muted">Лучший способ провести праздники и выходные - поход в кинотеатр! Лучшие фильмы каждый день по отличной цене. Ждем Вас!</p>
+    </div>
+
+<div class="container">
+    <div class="row  text-center">
+    {% for el in kinoteatrs %}
+        <div class="col-md-4 ">
+            <div class="card mb-3  shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ el[6] }}</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title pricing-card-title"> Время работы: с {{el[1]}} до {{el[2]}}</h5>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Адрес: {{el[3]}}</li>
+                        <li>Телефон: {{el[4]}}</li>
+                        <li>Почта: {{el[5]}}</li>
+                    </ul>
+                    <a href="/{{el[0]}}" class="btn btn-lg btn-block btn-outline-primary">Выбрать</a>
+                </div>
+            </div>
+        </div>
+  {% endfor %}
+
+
+
+
+
+
+
+  </div>
+</div>
+<!--       </div>-->
+{% endblock %}

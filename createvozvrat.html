@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ <title>Оформление возврата</title>
+{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<div class="container">
+    <h1>Оформление возврата</h1>
+    <form method="post" class="needs-validation" novalidate>
+
+        <div class="form-group">
+            <label for="time_of_pokaz">Введите почту покупателя</label>
+            <input type="text" class="form-control" name="id_c" id="id_c" placeholder="Введите почту покупателя" required>
+            <div class="invalid-feedback"> Вы не ввели почту покупателя </div> <br>
+        </div>
+
+
+        <div class="form-group">
+        <label for="film">Выберите фильм</label>
+        <select class="form-control" name="film" id="film" required>
+            {% for i in film %}
+            <option value="{{i[0]}}">{{i[1]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+<br>
+
+
+
+
+    <div class="form-group">
+        <label for="film">Введите дату сеанса</label>
+        <input type="date" class="form-control" class="mydate" id="data" name="data" placeholder="Дата" required>
+    </div>
+<script>
+$('.mydate').daterangepicker({
+  singleDatePicker: true,
+  locale: {
+ format: 'DD.MM.YYYY'
+  }
+ });
+</script>
+<br>
+
+
+             <div class="form-group">
+          <label for="time_of_pokaz">Введите время сеанса</label>
+        <input type="text" class="form-control" name="time_of_pokaz" id="time_of_pokaz" placeholder="Введите время сеанса" required>
+        <div class="invalid-feedback"> Вы не ввели время сеанса </div> <br>
+</div>
+
+    <div class="form-group">
+        <label for="zal">Выберите название зала</label>
+        <select class="form-control" name="zal" id="zal" required>
+            {% for i in zals %}
+            <option value="{{i[0]}}">{{i[1]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+<br>
+
+             <div class="form-group">
+          <label for="ryd">Введите номер ряда</label>
+         <input type="number" class="form-control" name="ryd" id="ryd" placeholder="Введите номер ряда" required>
+        <div class="invalid-feedback"> Вы не ввели номер ряда </div> <br>
+    </div>
+
+     <div class="form-group">
+          <label for="pl">Введите номер места</label>
+         <input type="number" class="form-control" name="pl" id="pl" placeholder="Введите номер места" required>
+        <div class="invalid-feedback"> Вы не ввели номер места </div> <br>
+    </div>
+
+        <button class="btn btn-primary" type="submit"> Оформить возврат </button>
+    </form>
+
+</div>
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+
+
+<!-- Инициализация виджета "Bootstrap datetimepicker" -->
+<script>
+    $(function () {
+      $('#datetimepicker1').datetimepicker(
+        { format: 'HH:mm', locale: 'ru' }
+      );
+    });
+</script>
+
+
+
+<!-- Здесь будет форма -->
+
+
+
+<!-- Подключаем библиотеку jQuery -->
+<script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Подключаем локаль библиотеки moment -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/ru.js"></script>
+<!-- Подключаем библиотеку moment -->
+<script data-require="MomentJS@2.10.0" data-semver="2.10.0" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<!-- Подключаем js-файл Bootstrap -->
+<script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Подключаем js-файл библиотеки DateTimePicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+
+{% endblock %}

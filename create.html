@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ <title>Добавление фильма</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Добавление фильма</h1>
+    <form method="post" class="needs-validation" novalidate>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="title_film" id="title_film" placeholder="Введите название фильма" required>
+            <div class="invalid-feedback"> Вы не ввели название фильма </div> <br>
+        </div>
+
+
+        <div class="form-group">
+            <label for="data">Выберите дату начала проката</label>
+            <input type="date" class="form-control" class="mydate" id="data" name="data" placeholder="Дата" required>
+        </div>
+<br>
+        <div class="form-group">
+            <label for="data2">Выберите дату окончания проката</label>
+            <input type="date" class="form-control" class="mydate" id="data2" name="data2" placeholder="Дата" required>
+        </div>
+
+<script>
+$('.mydate').daterangepicker({
+  singleDatePicker: true,
+  locale: {
+ format: 'DD.MM.YYYY'
+  }
+ });
+</script>
+<br>
+        <div class="form-group">
+            <input type="text" class="form-control" name="country_of_production" id="country_of_production" placeholder="Введите страну производства" required>
+            <div class="invalid-feedback"> Вы не ввели страну производства </div> <br>
+        </div>
+
+         <div class="form-group">
+            <input type="number" class="form-control" name="year_of_production" id="year_of_production" placeholder="Введите год производства (например: 2023)" required>
+            <div class="invalid-feedback"> Вы не ввели год производства </div> <br>
+         </div>
+
+        <div class="form-group">
+            <label for="age_ratings">Выберите рейтинг фильма</label>
+            <select class="form-control" name="age_ratings" id="age_ratings" required>
+                <option>0</option>
+                <option>6</option>
+                <option>12</option>
+                <option>16</option>
+                <option>18</option>
+                <option>21</option>
+
+            </select>
+        </div>
+        <br>
+
+        <script src="https://unpkg.com/imask"></script> <!-- Подключаем плагин через CDN -->
+    <script src="js/main.js"></script>
+
+
+
+
+
+
+
+
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="text" id="text" placeholder="Введите описание фильма" required>
+            <div class="invalid-feedback"> Вы не ввели описание фильма </div> <br>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="genre" id="genre" placeholder="Введите жанр(-ы) фильма" required>
+            <div class="invalid-feedback"> Вы не ввели жанр(-ы) фильма </div> <br>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="director" id="director" placeholder="Введите режиссера фильма"required>
+            <div class="invalid-feedback"> Вы не ввели режиссера фильма </div> <br>
+         </div>
+
+         <div class="form-group">
+            <input type="text" class="form-control" name="starring" id="starring" placeholder="Введите актерский состав" required>
+            <div class="invalid-feedback"> Вы не ввели актерский состав </div> <br>
+         </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" name="img" id="img" placeholder="Введите ссылку на изображение" required>
+            <div class="invalid-feedback"> Вы не ввели ссылку на изображение </div> <br>
+        </div>
+     <div class="form-group">
+        <input type="text" class="form-control" name="dlitel" id="dlitel" placeholder="Введите продолжительность фильма (**:**:**)" required>
+        <div class="invalid-feedback"> Вы не ввели продолжительность фильма </div> <br>
+    </div>
+
+        <button class="btn btn-primary" type="submit"> Добавить фильм </button>
+    </form>
+
+</div>
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const mask = (dataValue, options) => { // создаем универсальную функцию
+    const elements = document.querySelectorAll(`[data-mask="${dataValue}"]`) // ищем поля ввода по селектору с переданным значением data-атрибута
+    if (!elements) return // если таких полей ввода нет, прерываем функцию
+
+    elements.forEach(el => { // для каждого из полей ввода
+      IMask(el, options) // инициализируем плагин imask для необходимых полей ввода с переданными параметрами маски
+    })
+  }
+
+  // Используем наше функцию mask для разных типов масок
+
+  // Маска для номера телефона
+  mask('phone', {
+    mask: '+{7}(000)000-00-00'
+  })
+
+  // Маска для почтового индекса
+  mask('postalCode', {
+    mask: '000000' // шесть цифр
+  })
+
+  // Маска для даты
+  mask('date', {
+    mask: Date,
+    min: new Date(1900, 0, 1), // минимальная дата 01.01.1900
+  })
+
+  // Маска для числа
+  mask('number', {
+    mask: Number,
+    thousandsSeparator: ' ' // разделитель тысяч в числе
+  })
+
+  // Маска рейтинга
+  mask('reiting', {
+    mask: '{0}+'
+  })
+
+
+})
+
+</script>
+{% endblock %}

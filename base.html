@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+    {% block title %}{% endblock %}
+</head>
+<body>
+
+<!--    <img src="/Applications/Универ/5 семестр/Курсовик/templates/Fon.jpg" style="width:900px;height:600px;">-->
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Кинотетр "IceMovie"</h5>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+<!--            <a class="p-2 text-dark" href="/">Главная</a>-->
+<!--            <a class="p-2 text-dark" href="/about">Про магазин</a>-->
+            <a class="me-3 py-2 text-dark text-decoration-none" href="/">Главная</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="/halls">Залы</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="/discounts">Скидки и акции</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="/about">О нас</a>
+        </nav>
+<!--        <a class="btn btn-outline-primary" href="/create_schedule_data_time">Корзина</a>-->
+    </div>
+
+  {% block body %}{% endblock %}
+<div class="container">
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
+        <small class="d-block mb-3 text-muted"> © 2022</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Для гостей</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/discounts">Акции и скидки</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/polsSogl">Пользовательское соглашение</a></li>
+
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Форматы и залы</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/halls">Залы</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>О нас</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="/about">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+</body>
+</html>

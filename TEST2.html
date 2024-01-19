@@ -1,0 +1,194 @@
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2016/bmd/bootstrap-material-datetimepicker.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="https://bootstraptema.ru/plugins/2016/bmd/moment-with-locales.min.js"></script>
+<script src="https://bootstraptema.ru/plugins/2016/bmd/bootstrap-material-datetimepicker.js"></script>
+
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-12">
+ <h1 class="text-center">Добавление даты в INPUT Bootstrap</h1>
+ </div>
+ </div>
+ </div>
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-6">
+ <h2>Date Picker</h2>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-control-wrapper">
+ <input type="text" id="date" class="form-control floating-label" placeholder="Date">
+ </div>
+ </div>
+ <div class="col-md-6">
+ <pre><code>
+$('#date').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+ </code></pre>
+ </div>
+ </div>
+ </div>
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-6">
+ <h2>Time Picker</h2>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-control-wrapper">
+ <input type="text" id="time" class="form-control floating-label" placeholder="Time">
+ </div>
+ </div>
+ <div class="col-md-6">
+ <pre><code>
+$('#time').bootstrapMaterialDatePicker({ date: false });
+ </code></pre>
+ </div>
+ </div>
+ </div>
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-6">
+ <h2>Date Time Picker</h2>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-control-wrapper">
+ <input type="text" id="date-format" class="form-control floating-label" placeholder="Begin Date Time">
+ </div>
+ </div>
+ <div class="col-md-6">
+ <pre><code>
+$('#date-format').bootstrapMaterialDatePicker({ format : 'dddd DD MMMM YYYY - HH:mm' });
+ </code></pre>
+ </div>
+ </div>
+ </div>
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-6">
+ <h2>French Locales (Week starts at Monday)</h2>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-control-wrapper">
+ <input type="text" id="date-fr" class="form-control floating-label" value="18/03/2015 08:00" placeholder="Date de début">
+ </div>
+ </div>
+ <div class="col-md-6">
+ <pre><code>
+$('#date-fr').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY HH:mm', lang : 'fr', weekStart : 1, cancelText : 'ANNULER' });
+ </code></pre>
+ </div>
+ </div>
+ </div>
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-6">
+ <h2>Min Date set</h2>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="form-control-wrapper">
+ <input type="text" id="min-date" class="form-control floating-label" placeholder="Start Date">
+ </div>
+ </div>
+ <div class="col-md-6">
+ <pre><code>
+$('#min-date').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY HH:mm', minDate : new Date() });
+ </code></pre>
+ </div>
+ </div>
+ </div>
+ <div class="container well">
+ <div class="row">
+ <div class="col-md-6">
+ <h2>Events</h2>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6">
+ <div class="row">
+ <div class="col-md-12">
+ <div class="form-control-wrapper">
+ <input type="text" id="date-start" class="form-control floating-label" placeholder="Start Date">
+ </div>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-12">
+ <div class="form-control-wrapper">
+ <input type="text" id="date-end" class="form-control floating-label" placeholder="End Date">
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-md-6">
+ <div class="row">
+ <div class="col-md-12">
+ <pre><code>
+$('#date-end').bootstrapMaterialDatePicker({ weekStart : 0 });
+$('#date-start').bootstrapMaterialDatePicker({ weekStart : 0 }).on('change', function(e, date)
+{
+$('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+});
+ </code></pre>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <script type="text/javascript">
+ $(document).ready(function()
+ {
+ $('#date').bootstrapMaterialDatePicker
+ ({
+ time: false,
+ clearButton: true
+ });
+
+ $('#time').bootstrapMaterialDatePicker
+ ({
+ date: false,
+ shortTime: false,
+ format: 'HH:mm'
+ });
+
+ $('#date-format').bootstrapMaterialDatePicker
+ ({
+ format: 'dddd DD MMMM YYYY - HH:mm'
+ });
+ $('#date-fr').bootstrapMaterialDatePicker
+ ({
+ format: 'DD/MM/YYYY HH:mm',
+ lang: 'fr',
+ weekStart: 1,
+ cancelText : 'ANNULER',
+ nowButton : true,
+ switchOnClick : true
+ });
+
+ $('#date-end').bootstrapMaterialDatePicker
+ ({
+ weekStart: 0, format: 'DD/MM/YYYY HH:mm'
+ });
+ $('#date-start').bootstrapMaterialDatePicker
+ ({
+ weekStart: 0, format: 'DD/MM/YYYY HH:mm', shortTime : true
+ }).on('change', function(e, date)
+ {
+ $('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+ });
+
+ $('#min-date').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY HH:mm', minDate : new Date() });
+
+ $.material.init()
+ });
+ </script>

@@ -1,0 +1,13 @@
+{% extends 'bas_tes.html' %}
+
+{% block content %}
+    <h1>{% block title %} Books {% endblock %}</h1>
+    {% for authors in authors %}
+        <div class='authors'>
+            <h3>#{{ authors[0] }} - {{ authors[1] }} BY {{ authors[2] }}</h3>
+            <i><p>({{ authors[3] }} pages)</p></i>
+            <p class='review'>{{ authors[4] }}</p>
+            <i><p>Added {{ authors[5] }}</p></i>
+        </div>
+    {% endfor %}
+{% endblock %}

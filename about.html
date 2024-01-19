@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ <title>О кинотеатре</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Связь с нами</h1>
+    <p> Классические и современные фильмы! Успейте купить по самой выгодной цене!</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card mb-3 shadow-sm" style="max-width: 600px;">
+                <div class="card-header">
+                    <h4 class="card-title text-dark text-center">Контакты</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-justify">Мы постоянно развиваемся, и нам важно ваше мнение о работе нашего кинотеатра и нашего сервиса. Если вы хотите задать вопрос, оставить отзыв или сообщить о забытой вещи, напишите нам или прослушайте ответы на частые вопросы в нашем автоинформаторе по телефону.</p>
+                    <ul class="list-counter-circle">
+                         <li>+7 (495) 419-33-44</li>
+                        <li>ул. Большая Морская, д. 96б</li>
+                        <li>10:00-02:00 без перерывов и выходных</li>
+                         <li>E-mail: IceMovie@mail.ru</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card mb-3 shadow-sm" style="max-width: 600px;">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1710.5247819178037!2d30.295967882636475!3d59.92845448588192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469630e27aa75c11%3A0x4b26c266d1e54e5b!2z0L3QsNCxLiDRgNC10LrQuCDQnNC-0LnQutC4LCA5NtCxLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkwMDAw!5e0!3m2!1sru!2sru!4v1669113539220!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <style>
+                    .map-responsive{
+                    overflow:hidden;
+                    padding-bottom:56.25%;
+                    position:relative;
+                    height:0;
+                }
+                .map-responsive iframe{
+                    left:0;
+                    top:0;
+                    height:100%;
+                    width:100%;
+                    position:absolute;
+                }
+                </style>
+            </div>
+        </div>
+         <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                    <h4 class="card-title text-dark text-center">Реквизиты компании</h4>
+                </div>
+                <div class="card-body">
+<!--                    <p class="text-justify">Мы постоянно развиваемся, и нам важно ваше мнение о работе нашего кинотеатра и нашего сервиса. Если вы хотите задать вопрос, оставить отзыв или сообщить о забытой вещи, напишите нам или прослушайте ответы на частые вопросы в нашем автоинформаторе по телефону.</p>-->
+                    <ul class="list-counter-circle">
+                         <li>Юридический адрес: 125212, г. Москва, ул. Выборгская, д.16, стр.1, эт. пом. ком 4. XIV. 17</li>
+                        <li>Фактический адрес: 117105, г. Москва, Новоданиловская наб., д. 6, корпус 1 «Danilov Plaza», 8 этаж.</li>
+                        <li>ОГРН 1027739050646</li>
+                         <li>Для сотрудничества, оставляйте заявку на почту: IceMovie_business@mail.ru</li>
+                        </ul>
+                </div>
+            </div>
+</div>
+
+{% endblock %}

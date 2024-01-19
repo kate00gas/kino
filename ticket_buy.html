@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ <title>Покупка</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Покупка</h1>
+
+
+    <br>
+<!-- <div class="card w-50 text-center">-->
+<!--    <img class="img-fluid rounded mx-auto d-block" src="{{film[0][11]}}" alt="Card image cap">-->
+<!-- </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-8 offset-md-2">-->
+    <div class="row row-cols-auto row-cols-md-2 mb-8 text-center">
+            {% for i in range(N) %}
+            <div class="card w-50">
+                <div class="card-body">
+                    <h5 class="card-title">Билет</h5>
+                    <ul class="list-unstyled mt-4 mb-4">
+                        <li>{{film[0][1]}} ({{seans[0][3]}})</li>
+                        <li>Дата и время: {{seans[0][4]}} ({{seans[0][5]}})</li>
+                        <li>Зал: {{zal[0][1]}} Ряд: {{RYD[i]}} Место: {{PLACE[i]}}</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-8 offset-md-5">
+                            <h2 class="card-text"> {{seans[0][6]}} <small class="text-muted">рублей</small></h2>
+                        </div>
+                    </div>
+<!--                    <p class="card-text"><small class="text-muted">*Возврат билета после покупки запрещен</small></p>-->
+                </div>
+            </div>
+            {% endfor %}
+<!--        </div>-->
+<!--</div>-->
+    </div>
+    <br>
+<!--     <h2 class="card-text text-right"> Сумма заказа: {{sum}} <small class="text-muted">рублей</small></h2>-->
+
+<!--    <dl class="row">-->
+<!--  <dt class="col-sm-3">Сумма заказа:</dt>-->
+<!--  <dd class="col-sm-9">{{sum}}</dd>-->
+<!--</dl>-->
+
+    <div class="header-h2 header-h2-center">
+  <h2>Сумма заказа: {{sum}} рублей</h2>
+</div>
+
+
+    <h2>Введите контактные данные</h2>
+    <br>
+
+
+    <form method="post" action="/{{id}}/films/{{id_f}}/buy/{{id_s}}/prodag" class="needs-validation" novalidate >
+        <input type="text" class="form-control" name="FIO" id="FIO" placeholder="Введите ФИО" required>
+        <div class="invalid-feedback"> Введите ФИО </div> <br>
+
+        <input type="text" class="form-control" name="e_mail" id="e_mail" placeholder="Введите почту (name@example.com)" required>
+        <div class="invalid-feedback"> Введите почту </div> <br>
+<!--        <label for="exampleFormControlTextarea1">Комменарий к заказу:</label>-->
+<!--        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
+        <br>
+        <div class="form-check">
+            {% for i in range(N) %}
+            <input class="form-check-input" type="checkbox" value="{{TICKET_ID[i]}}" name="box" id="invalidCheck_{{i}}" required>
+            <label class="form-check-label" for="invalidCheck_{{i}}">
+                Подтвердить покупку билета {{i+1}}
+            </label>
+            <div class="invalid-feedback">
+                Нужно подтвердить покупку билета
+            </div>
+            <br>
+             {% endfor %}
+
+
+            <input class="form-check-input" type="checkbox" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+                Соглашаюсь с пользовательским соглашением
+            </label>
+            <div class="invalid-feedback">
+                Для покупки билета нужно подтвердить согласие с пользовательским соглашением
+            </div>
+        </div>
+
+        <br>
+
+        <button class="btn btn-primary" type="submit"> Купить </button>
+    </form>
+
+<style>
+  .header-h2 {
+    position: relative;
+    margin-bottom: .5rem;
+  }
+  .header-h2::after {
+    content: "";
+    position: absolute;
+    border-top: 2px solid #122a84;
+    border-bottom: 2px solid #122a84;
+    height: .375rem;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -999;
+  }
+  .header-h2 h2 {
+    font-size: 1.5rem;
+    color: #122a84;
+    display: inline-block;
+    background: #fff;
+    margin-bottom: 0;
+    padding-right: 1rem;
+    text-transform: uppercase;
+  }
+  .header-h2-center {
+    text-align: center;
+  }
+  .header-h2-center h2 {
+    padding-left: 1rem;
+  }
+  .header-h2-right {
+    text-align: right;
+  }
+  .header-h2-right h1 {
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+
+
+
+{% endblock %}

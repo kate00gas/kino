@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ <title>Выбор дейтсвия</title>
+{% endblock %}
+
+{% block body %}
+   <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Выберите действие</h1>
+
+    </div>
+
+<div class="container">
+    <div class="row text-center gy-3">
+        <a href="{{url_for('create_films')}}" class="btn btn-lg  btn-outline-primary">Внести новый фильм</a>
+        <a href="{{url_for('create_seans')}}" class="btn btn-lg  btn-outline-primary">Внести новый сеанс</a>
+        <a href="{{url_for('createTicket')}}" class="btn btn-lg btn-outline-primary">Создать билеты на сеанс</a>
+        <a href="{{url_for('createVozvrat')}}" class="btn btn-lg btn-outline-primary">Оформить возврат билета</a>
+        <a href="{{url_for('ydalseans')}}" class="btn btn-lg btn-outline-primary">Удалить сеанс</a>
+        <a href="{{url_for('ydalfilm')}}" class="btn btn-lg btn-outline-primary">Удалить фильм</a>
+         <a href="{{url_for('ydalcust')}}" class="btn btn-lg btn-outline-primary">Удалить покупателя</a>
+        <a href="/logout" class="btn btn-lg  btn-outline-danger">Выйти</a>
+    </div>
+</div>
+{% endblock %}

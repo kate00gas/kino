@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ <title>Залы</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Самые лучшие места</h1>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+<!--    <div class="row row-cols-auto row-cols-md-2 mb-8 text-center">-->
+            <div class="card mb-3 shadow-sm" style="max-width: 600px;">
+                <img class="card-img" src="https://static.kinoafisha.info/k/cinemas/1920x1080/upload/cinema/photos/8325475/23d02541d82f7a161bd37a06a5cffcf3.jpg" class="img-thumbnail " alt="Card image cap">
+                <div class="card-img-overlay">
+                    <div class="card-img-overlay text-white">
+                        <div class="card-header">
+                            <h4 class="card-title text-white  text-center">Мягкие удобные кресла!</h4>
+                        </div>
+                        <p class="text-light bg-dark">В нашем кинотеатре вы почувствуете эффект полного погружения благодаря сиденьям, которые обеспечивают полный комфорт во время сеанса.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card mb-4 shadow-sm border-primary" style="max-width: 600px;">
+                <div class="card-header">
+                    <h4 class="card-title text-dark text-center">Новый этап развития окружающего звука. Полное погружение, звук даже над головой!</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-justify">Технология Dolby Atmos представляет аудиосистему, в которой звуковые объекты можно точно размещать и перемещать в трехмерном пространстве, включая область над головой зрителя. Она оживляет происходящее на экране и создает удивительно мощный, насыщенный звук, обеспечивая эффект полного погружения.</p>
+                    <style>
+                        /* CSS */
+
+                        .list-counter-circle {
+                        list-style: none;
+                        counter-reset: list;
+                        margin: 0;
+                        padding: 0;
+                        overflow: hidden;
+                        }
+                        .list-counter-circle>li {
+                        position: relative;
+                        display: block;
+                        height: 2rem;
+                        line-height: 2rem;
+                        margin-left: 1.75rem;
+                        margin-bottom: .25rem;
+                        padding-left: 1rem;
+                        padding-right: .5rem;
+                        color: #fff;
+                        background: #7b1fa2;
+                        white-space: nowrap;
+                        border-radius: .25rem
+                        }
+                        .list-counter-circle>li:last-child {
+                        margin-bottom: 0;
+                        }
+                        .list-counter-circle>li::before {
+                        content: counter(list);
+                        counter-increment: list;
+                        position: absolute;
+                        left: -2rem;
+                        top: -.25rem;
+                        bottom: -.25rem;
+                        width: 2.5rem;
+                        line-height: 2rem;
+                        border-radius: 1.25rem;
+                        border: .25rem solid #fff;
+                        text-align: center;
+                        color: #fff;
+                        background: #7b1fa2;
+                        }
+                        </style>
+                        <ol class="list-counter-circle">
+                        <li>Два ряда громкоговорителей размещены на потолке</li>
+                        <li>Ряд громкоговорителей на стенах продлен до экрана</li>
+                        <li>В задних углах зала установлены 2 дополнительных сабвуфера</li>
+                        <li>В больших залах пять фронтальных акустических систем</li>
+                        </ol>
+                    <br>
+                    <p class="text-justify">Потолочные колонки делают спецэффекты еще более реалистичными, а дополнительные элементы сбоку, спереди и сзади придают звучанию объем и обеспечивают более естественное перемещение звука по залу</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

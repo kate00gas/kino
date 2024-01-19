@@ -1,0 +1,102 @@
+
+              <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Примеры работы с Bootstrap 3 DateTimePicker</title>
+  <!-- Bootstrap CSS -->
+  <link href="/examples/libs/bootstrap-3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Bootstrap DateTimePicker CSS -->
+  <link href="/examples/vendors/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!-- 1. Подключить CSS-файл Bootstrap 3 -->
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<!-- 2. Подключить CSS-файл библиотеки Bootstrap 3 DateTimePicker -->
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+
+<!-- 3. Подключить библиотеку jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- 4. Подключить библиотеку moment -->
+<script src="js/moment-with-locales.min.js"></script>
+<!-- 5. Подключить js-файл фреймворка Bootstrap 3 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- 6. Подключить js-файл библиотеки Bootstrap 3 DateTimePicker -->
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Подключаем CSS Bootstrap -->
+<link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- Подключаем CSS DateTimePicker -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.css" />
+
+
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<link rel="stylesheet" href="https://bootstraptema.ru/plugins/2016/bmd/bootstrap-material-datetimepicker.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="https://bootstraptema.ru/plugins/2016/bmd/moment-with-locales.min.js"></script>
+<script src="https://bootstraptema.ru/plugins/2016/bmd/bootstrap-material-datetimepicker.js"></script>
+
+
+</head>
+
+<body style="padding: 50px;">
+<form>
+   <div class="form-group">
+          <div class="input-group" id="datetimepicker4">
+            <input type="text" class="form-control" />
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </span>
+          </div>
+        </div>
+
+      <div class="form-group">
+  <!-- элемент input с id = datetimepicker1 -->
+  <div class="input-group" id="datetimepicker1">
+    <input type="text" class="form-control" />
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  </div>
+</div>
+
+    </form>
+
+</div>
+
+<!-- Инициализация виджета "Bootstrap datetimepicker" -->
+<script>
+      $(function () {
+        $('#datetimepicker4').datetimepicker(
+            {format: 'HH:mm', locale: 'ru'}
+        );
+    });
+
+</script>
+
+
+
+<!-- Здесь будет форма -->
+
+
+
+<!-- Подключаем библиотеку jQuery -->
+<script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Подключаем локаль библиотеки moment -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/ru.js"></script>
+<!-- Подключаем библиотеку moment -->
+<script data-require="MomentJS@2.10.0" data-semver="2.10.0" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<!-- Подключаем js-файл Bootstrap -->
+<script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Подключаем js-файл библиотеки DateTimePicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+
+</body>
+
+</html>
+
